@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("assets/bg.png");
+
+  /* Full height */
+  height: 100vh; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Position the content in the center of the screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.fade-in, .fade-out {
+    /* Set initial opacity to 0 (completely transparent) */
+    opacity: 0;
+}
+
+.card1.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 0s;
+}
+
+.card1.fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+    animation-delay: 5s; /* Change delay to 5s */
+}
+
+.card2.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 7s; /* Delay card2 appearance */
+    position: absolute; /* Position card2 in the center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Keyframes for the fadeIn and fadeOut animations */
+@keyframes fadeIn {
+    /* Animation starts with 0 opacity */
+    from {
+        opacity: 0;
+    }
+    /* Animation ends with 1 opacity (fully visible) */
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    /* Animation starts with 1 opacity (fully visible) */
+    from {
+        opacity: 1;
+    }
+    /* Animation ends with 0 opacity (completely transparent) */
+    to {
+        opacity: 0;
+    }
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .bg {
+    background-size: contain;
+  }
+}
+
+.button {
+            display: none; /* Initially hidden */
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #651575;
+            color: #FE15C8;
+            border: none;
+            border-radius: 20px; /* Rounded corners */
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+</style>
+</head>
+<body>
+    <div class="bg">
+        <div class="cards">
+            <img class="card1 fade-in" src="assets/card1.png" alt="Card 1">
+            <img class="card2 fade-in" src="assets/card2.png" alt="Card 2">
+            <style>
+                /* CSS for initial opacity */
+                #imageContainer img {
+                    animation: fadeIn 2s ease-in-out forwards;
+                    position: absolute; /* Position card2 in the center */
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    
+                }
+                @keyframes fadeOut {
+                /* Animation starts with 1 opacity (fully visible) */
+                from {
+                    opacity: 1;
+                }
+                /* Animation ends with 0 opacity (completely transparent) */
+                to {
+                    opacity: 0;
+                }
+                }
+                
+            </style>
+            <div id="imageContainer"></div>
+
+            <script>
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        var imageContainer = document.getElementById("imageContainer");
+                        // Create an img element
+                        var image = document.createElement("img");
+                        // Set the image source to "image.png"
+                        image.src = "assets/Card3.png";
+                        image.alt = "Our Philosophy";
+                        // Append the image to the imageContainer div
+                        imageContainer.appendChild(image);
+            
+                        // Trigger reflow and then add the 'show' class to start the fade-in animation
+                        image.offsetWidth; // Reflow
+                        image.style.opacity = 1; // Fade in
+                    }
+                });
+            </script>
+            </div>
+            <div id="imageContainer"></div>
+
+            <script>
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "ArrowRight") {
+                        var imageContainer = document.getElementById("imageContainer");
+                        // Create an img element
+                        var image = document.createElement("img");
+                        // Set the image source to "image.png"
+                        image.src = "assets/Card4.png";
+                        image.alt = "Apply";
+                        // Append the image to the imageContainer div
+                        imageContainer.appendChild(image);
+            
+                        // Trigger reflow and then add the 'show' class to start the fade-in animation
+                        image.offsetWidth; // Reflow
+                        image.style.opacity = 1; // Fade in
+                    }
+                    document.addEventListener("keydown", function(event) {
+                    if (event.key === "a" || event.key === "A") {
+                        window.location.href = "https://quilgo.com/t/LbfJh477rJLAAWan";
+                    }
+                 });
+                });
+            </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
